@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Developer Sample — Dayeon Jung (22400661)</title>
+  <meta name="description" content="OSS assignment developer sample page — Dayeon Jung" />
+  <style>
+    :root {
+      --bg: #1e1e1e;
+      --panel: #252526;
+      --text: #d4d4d4;
+      --muted: #a0a0a0;
+      --brand: #569cd6;
+      --brand-2: #c586c0;
+      --accent-green: #6a9955;
+      --border: #3c3c3c;
+      --shadow: 0 4px 12px rgba(0, 0, 0, .5);
+      --link: #4fc3f7;
+      --link-hover: #ffcc80;
+    }
+
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html, body { height: 100% }
+
+    body {
+      margin: 0;
+      font-family: Consolas, "Courier New", monospace;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a:not(.btn) { color: var(--link); text-decoration: underline }
+    a:not(.btn):hover { color: var(--link-hover) }
+
+    .container { width: min(1040px, 92%); margin: 0 auto }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--panel); border-bottom: 1px solid var(--border)
+    }
+
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; padding: 14px 0
+    }
+
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700 }
+
+    nav a {
+      color: var(--link); margin-left: 18px; font-weight: 600; text-decoration: underline
+    }
+    nav a:hover { color: var(--link-hover) }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 14px; border: 1px solid var(--border); border-radius: 6px;
+      color: var(--text); text-decoration: none; font-weight: 700; background: #2d2d2d;
+      transition: .15s ease; width: auto;
+    }
+    .btn:hover { border-color: var(--brand); color: var(--brand) }
+    .btn.block { display: block; width: 100%; text-align: center }
+
+    .hero { padding: 80px 0 40px; position: relative }
+    .hero::before { content: none }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.12; margin: 40px 0 6px; color: var(--brand)
+    }
+    .hero p { margin: 0 0 22px }
+
+    .pill {
+      padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border);
+      color: var(--accent-green); font-size: 13px; background: #2d2d2d
+    }
+
+    .about>div { flex: 1 }
+
+    /* HERO about 레이아웃 */
+    .hero .about {
+      display: flex; align-items: flex-start; gap: 20px; margin-top: 12px;
+    }
+    .hero .about .avatar {
+      width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
+      margin: 0 16px 0 0; border: none !important; box-shadow: none !important;
+    }
+
+    @media (max-width: 500px) {
+      .hero .about { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+      .hero .about .avatar {
+        order: -1; width: 150px; height: 150px; border-radius: 50%;
+        object-fit: cover; align-self: center; margin: 8px 0; border: none !important; box-shadow: none !important;
+      }
+    }
+
+    .about>div { display: flex; flex-direction: column; align-items: flex-start; }
+    .about>div .pill { margin-top: 6px; }
+
+    section { padding: 28px 0 8px }
+    .section-title { font-size: 20px; margin: 8px 0 18px; color: var(--brand-2) }
+
+    .panel {
+      background: #1e1e1e; border: 1px solid var(--border);
+      border-radius: 8px; padding: 18px; box-shadow: var(--shadow)
+    }
+
+    .vlinks { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px }
+
+    footer { margin: 32px 0 60px; color: var(--muted); font-size: 14px }
+
+    @media (max-width:860px) {
+      .about { display: flex; align-items: center; justify-content: space-between; gap: 20px }
+      .about>div { flex: 1 }
+      .avatar {
+        width: 200px; height: 200px; border-radius: 50%; object-fit: cover;
+        border: 1px solid white; box-shadow: var(--shadow); margin-left: 20px; flex: 0 0 auto
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span>Dayeon Jung <small style="opacity:.6; font-weight:600">(22400661)</small></span>
+      </div>
+      <nav aria-label="Main links">
+        <a href="#intro">Intro</a>
+        <a href="#class-info">Class Info</a>
+        <a href="#weeklies">Weeklies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section id="intro" class="hero">
+      <h1>Welcome to Dayeon’s Website!!</h1>
+      <div class="about">
+        <div>
+          <p>I’m a sophomore at Handong Global University (CS/EE) learning frontend foundations with HTML,
+            CSS, and JavaScript. This page collects my coursework and live deployments.</p>
+          <span class="pill">OSS · HTML · CSS · JavaScript</span>
+        </div>
+        <img class="avatar" src="" alt="Photo of Dayeon Jung" />
+      </div>
+    </section>
+
+    <!-- CLASS INFO -->
+    <section id="class-info">
+      <h2 class="section-title">Class Info</h2>
+      <div class="panel">
+        <p>This portfolio is part of Professor Soyeon Jang’s block-plan course:
+          <strong>Open Source Studio & Web Service Development</strong>. The work focuses on practicing
+          HTML/CSS/JS and deploying a live site via GitHub + Netlify.
+        </p>
+      </div>
+    </section>
+
+    <!-- WEEKLIES -->
+    <section id="weeklies">
+      <h2 class="section-title">Weeklies</h2>
+      <div class="panel">
+        <ul class="vlinks">
+          <li>
+            <a class="btn block" href="https://aquamarine-muffin-dbac03.netlify.app/" target="_blank" rel="noopener noreferrer">
+              Week 1 — HTML/CSS/Form Page
+            </a>
+          </li>
+          <li>
+            <a class="btn block" href="https://2025osshw2.netlify.app/" target="_blank" rel="noopener noreferrer">
+              Week 2 — Forms, CSS, JS, RWD
+            </a>
+          </li>
+          <li>
+            <a class="btn block" href="https://2025ooshw3.netlify.app/" target="_blank" rel="noopener noreferrer">
+              Week 3 — Frontend CRUD Service(RWD)
+            </a>
+          </li>
+          <!-- 계속 추가 가능: Week 3, Week 4 ... -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="panel">
+        <p>📧 <a href="mailto:jyeon573@gmail.com">jyeon573@gmail.com</a></p>
+        <p>💬 KakaoTalk ID: <strong>Ampoule</strong></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Dayeon Jung (22400661) — OSS Assignment Page</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
